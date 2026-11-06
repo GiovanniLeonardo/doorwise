@@ -8,21 +8,22 @@
   <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans, and Caveat for handwritten notes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   
   <!-- FontAwesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
     :root {
-      /* Card sampled navy blue & gold accents */
-      --brand-navy: #0F2537;
-      --brand-navy-dark: #091724;
-      --brand-navy-light: #16364E;
+      /* Softened, refined navy & gold palette */
+      --brand-navy: #1E3A5F;
+      --brand-navy-dark: #142842;
+      --brand-navy-light: #2A4C78;
       --brand-gold: #C9A86A;
       --brand-gold-hover: #B89658;
+      --terracotta-door: #C58572;
       
-      --bg-banner-top: #F9F6F0;
+      --bg-banner-top: #FAF7F2;
       --bg-banner-mid: #F4EFE7;
       --bg-banner-shadow: #EBE3D7;
       --bg-cream: #FAF7F2;
@@ -98,23 +99,24 @@
 
     .logo-main {
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       gap: 1px;
     }
 
     .doorwise-logo-svg {
-      width: 38px;
-      height: 48px;
+      width: 48px;
+      height: 52px;
       display: block;
+      margin-bottom: 2px;
     }
 
     .logo-text {
       font-family: var(--font-serif);
-      font-size: 40px;
+      font-size: 42px;
       font-weight: 600;
-      letter-spacing: 2.2px;
+      letter-spacing: 2.4px;
       color: #1A1817;
-      line-height: 1;
+      line-height: 0.95;
       margin-left: 2px;
     }
 
@@ -125,7 +127,7 @@
       color: #726C65;
       text-transform: uppercase;
       margin-top: 5px;
-      padding-left: 1px;
+      padding-left: 2px;
     }
 
     .nav-menu {
@@ -178,7 +180,7 @@
     .btn-connect:hover {
       background-color: var(--brand-navy-light);
       transform: translateY(-1px);
-      box-shadow: 0 4px 14px rgba(15, 37, 55, 0.35);
+      box-shadow: 0 4px 14px rgba(30, 58, 95, 0.3);
     }
 
     .mobile-toggle {
@@ -190,80 +192,56 @@
       cursor: pointer;
     }
 
-    /* ================= Hero Section with Original Shading ================= */
+    /* ================= Hero Section (Crisp Left Text + Lady on Doorway) ================= */
     .hero-section {
       position: relative;
-      background: 
-        radial-gradient(ellipse 65% 80% at 20% 35%, rgba(255, 255, 255, 0.85) 0%, rgba(247, 243, 237, 0.6) 45%, rgba(235, 227, 215, 0.95) 100%),
-        linear-gradient(135deg, var(--bg-banner-top) 0%, var(--bg-banner-mid) 50%, var(--bg-banner-shadow) 100%);
+      background-color: #FAF7F2;
       overflow: hidden;
-      min-height: 520px;
+      min-height: 540px;
     }
 
     .hero-wrapper {
       position: relative;
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1.12fr;
       align-items: center;
-      min-height: 520px;
-    }
-
-    .hero-bg-media {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 78% center;
-      z-index: 1;
-    }
-
-    .hero-overlay-gradient {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        90deg, 
-        #F7F3ED 0%, 
-        #F7F3ED 38%, 
-        rgba(247, 243, 237, 0.92) 50%, 
-        rgba(247, 243, 237, 0.35) 70%, 
-        transparent 100%
-      );
-      z-index: 2;
-      pointer-events: none;
+      min-height: 540px;
+      z-index: 3;
     }
 
     .hero-content {
       position: relative;
-      z-index: 3;
+      z-index: 5;
       max-width: 530px;
-      padding: 60px 0;
+      padding: 60px 24px 60px 0;
     }
 
     .hero-breadcrumbs {
       font-size: 10.5px;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 2.6px;
       text-transform: uppercase;
-      color: #77716A;
+      color: #615B54;
       margin-bottom: 22px;
     }
 
     .hero-title {
       font-family: var(--font-serif);
       font-size: 56px;
-      font-weight: 500;
+      font-weight: 600;
       line-height: 1.08;
       letter-spacing: -0.5px;
-      color: #1C1917;
+      color: #141211;
       margin-bottom: 24px;
     }
 
     .hero-desc {
       font-size: 15.5px;
       line-height: 1.65;
-      color: #55504C;
+      color: #383431;
+      font-weight: 500;
       margin-bottom: 34px;
-      max-width: 460px;
+      max-width: 480px;
     }
 
     .btn-hero {
@@ -278,33 +256,133 @@
       text-transform: uppercase;
       padding: 13px 28px;
       border-radius: 28px;
+      align-self: flex-start;
       transition: all 0.25s ease;
     }
 
     .btn-hero:hover {
       background-color: var(--brand-navy-light);
       transform: translateY(-1px);
-      box-shadow: 0 4px 14px rgba(15, 37, 55, 0.35);
+      box-shadow: 0 4px 14px rgba(30, 58, 95, 0.3);
     }
 
-    .hero-handwritten-note {
+    .hero-banner-visual {
+      position: relative;
+      height: 540px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      overflow: hidden;
+      background-color: #F0EAE1;
+    }
+
+    .hero-banner-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center right;
+      display: block;
+    }
+
+    /* Fallback composite for instant live preview */
+    .hero-banner-fallback {
       position: absolute;
-      right: 6%;
-      top: 30%;
-      z-index: 4;
-      font-family: var(--font-hand);
-      color: rgba(255, 255, 255, 0.95);
-      font-size: 32px;
-      line-height: 1.15;
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
-      transform: rotate(-4deg);
-      pointer-events: none;
+      inset: 0;
+      display: flex;
+      align-items: stretch;
+      justify-content: flex-end;
+      background: #EFE9E0;
     }
 
-    .hero-handwritten-note span {
+    .hero-fallback-lady {
+      width: 58%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 55% 20%;
+      z-index: 1;
+    }
+
+    .hero-fallback-door {
+      width: 42%;
+      height: 100%;
+      background: linear-gradient(135deg, #1C1A19 0%, #100E0E 100%);
+      position: relative;
+      border-left: 5px solid #2B2624;
+      box-shadow: inset 10px 0 24px rgba(0,0,0,0.65);
+      z-index: 2;
+    }
+
+    /* Architectural door panels on dark door */
+    .door-panel-top, .door-panel-bottom {
+      position: absolute;
+      left: 14%;
+      right: 14%;
+      border: 2px solid #2E2927;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.7), 0 1px 2px rgba(255,255,255,0.06);
+      border-radius: 2px;
+    }
+    .door-panel-top {
+      top: 8%;
+      height: 38%;
+    }
+    .door-panel-bottom {
+      bottom: 8%;
+      height: 38%;
+    }
+
+    /* Ornate Gold Door Handle & Lock */
+    .door-knob-plate {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 110px;
+      background: linear-gradient(135deg, #F9E7B3 0%, #D4AF37 40%, #AA8022 75%, #F4D375 100%);
+      border-radius: 6px;
+      box-shadow: 2px 4px 12px rgba(0,0,0,0.75), inset 0 1px 2px rgba(255,255,255,0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      padding: 10px 0;
+      z-index: 4;
+    }
+
+    .door-knob-ball {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #FFF2CC 0%, #DFB743 45%, #8C6212 90%);
+      box-shadow: 2px 3px 6px rgba(0,0,0,0.6);
+      border: 1px solid #755209;
+    }
+
+    .door-keyhole {
+      width: 5px;
+      height: 10px;
+      background: #1A1308;
+      border-radius: 2px;
+    }
+
+    /* Handwritten cursive script matching original banner */
+    .door-script-overlay {
+      position: absolute;
+      left: 20%;
+      top: 18%;
+      z-index: 5;
+      font-family: var(--font-hand);
+      color: #E8BEB3;
+      font-size: 34px;
+      line-height: 1.15;
+      transform: rotate(-5deg);
+      pointer-events: none;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+    }
+    .door-script-overlay span {
       display: block;
       font-size: 26px;
-      margin-top: 4px;
+      margin-top: 3px;
     }
 
     /* ================= Section Header Commons ================= */
@@ -846,7 +924,7 @@
       width: 16px;
     }
 
-    /* ================= Footer in Deep Navy ================= */
+    /* ================= Footer ================= */
     footer {
       background: var(--brand-navy);
       color: #FFFFFF;
@@ -877,7 +955,7 @@
 
     .footer-social-link:hover {
       background: var(--brand-gold);
-      color: var(--brand-navy);
+      color: var(--brand-navy-dark);
       transform: translateY(-2px);
     }
 
@@ -889,6 +967,20 @@
 
     /* ================= Responsive Breakpoints ================= */
     @media (max-width: 1024px) {
+      .hero-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .hero-content {
+        padding: 50px 0 30px;
+      }
+      .hero-image-col {
+        height: 380px;
+      }
+      .hero-banner-img {
+        mask-image: none;
+        -webkit-mask-image: none;
+        object-position: center;
+      }
       .services-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 30px 10px;
@@ -930,9 +1022,6 @@
       }
       .hero-title {
         font-size: 38px;
-      }
-      .hero-handwritten-note {
-        display: none;
       }
       .services-grid {
         grid-template-columns: 1fr;
@@ -979,30 +1068,13 @@
     <div class="container nav-container">
       <a href="#home" class="brand-logo" aria-label="Doorwise Home">
         <div class="logo-main">
-          <!-- Architectural 'D' with Open Door & Gold Knob -->
-          <svg class="doorwise-logo-svg" viewBox="0 0 76 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path 
-              d="M 12 12 Q 12 6 18 6 L 42 6 C 62 6 68 22 68 48 C 68 74 62 90 42 90 L 18 90 Q 12 90 12 84 Z" 
-              fill="#EFE9E0" 
-            />
-            <path 
-              d="M 14 12 L 32 20 L 32 78 L 14 84 Z" 
-              fill="#C9A86A" 
-            />
-            <path 
-              d="M 32 20 L 35 22 L 35 76 L 32 78 Z" 
-              fill="#A9884B" 
-            />
-            <circle cx="28" cy="50" r="2.4" fill="#0F2537" stroke="#091724" stroke-width="0.8" />
-            <path 
-              d="M 14 90 L 42 90 C 65 90 71 74 71 48 C 71 22 65 6 42 6 L 14 6 L 14 90 Z" 
-              stroke="#0F2537" 
-              stroke-width="5.5" 
-              stroke-linejoin="round" 
-            />
-            <line x1="14" y1="6" x2="14" y2="90" stroke="#0F2537" stroke-width="3" />
+          <!-- Exact Brand Logo SVG from brand_logo.png -->
+          <svg class="doorwise-logo-svg" viewBox="0 0 92 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M 12 94 L 12 44 C 12 18 36 6 62 6" stroke="#1A1817" stroke-width="2.8" stroke-linecap="round" fill="none" />
+            <path d="M 60 6 C 74 6 86 22 86 48 C 86 76 72 94 48 94 C 36 94 28 86 24 74 C 30 84 40 88 50 88 C 68 88 78 72 78 48 C 78 24 66 12 50 12 C 40 12 30 18 24 30" fill="#1A1817" />
+            <path d="M 28 94 L 28 14 C 28 14 48 15 54 28 C 57 34 57 88 57 94 Z" fill="#C58572" />
+            <circle cx="43" cy="54" r="2.2" fill="#FFFFFF" />
           </svg>
-
           <span class="logo-text">OORWISE</span>
         </div>
         <span class="logo-tagline">OPENING THE RIGHT DOORS FOR BUSINESS.</span>
@@ -1028,17 +1100,10 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Section with Crisp Left Text & Full Right Lady / Door Knob Visual -->
   <section class="hero-section" id="home">
-    <img 
-      src="hero-banner.jpg" 
-      onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1920&q=80';" 
-      alt="Doorwise Brand Ambassador opening doors" 
-      class="hero-bg-media" 
-    />
-    <div class="hero-overlay-gradient"></div>
-
     <div class="container hero-wrapper">
+      <!-- Left side: Crisp, 100% visible typography -->
       <div class="hero-content">
         <div class="hero-breadcrumbs">
           NETWORKING &nbsp;/&nbsp; LEAD GENERATION &nbsp;/&nbsp; BUSINESS DEVELOPMENT
@@ -1056,9 +1121,189 @@
         </a>
       </div>
 
-      <div class="hero-handwritten-note">
-        More than<br />
-        networking. <span>♡</span>
+      <!-- Right side: Lady at door with laptop, gold handle & 'More than networking. ♡' -->
+      <div class="hero-banner-visual">
+        <!-- High-fidelity graphic representation for instant preview rendering -->
+        <svg class="hero-banner-fallback-svg" viewBox="0 0 740 460" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%; display:block;">
+          <defs>
+            <!-- Wall & Outdoor Depth -->
+            <linearGradient id="wallGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#EFE8DE"/>
+              <stop offset="50%" stop-color="#E2D9CD"/>
+              <stop offset="100%" stop-color="#D7CCC0"/>
+            </linearGradient>
+            <!-- Architecture Column -->
+            <linearGradient id="colGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#D9CEC1"/>
+              <stop offset="35%" stop-color="#F2EBE1"/>
+              <stop offset="80%" stop-color="#D3C6B6"/>
+              <stop offset="100%" stop-color="#BEB09F"/>
+            </linearGradient>
+            <!-- Black Entrance Door Frame & Panels -->
+            <linearGradient id="doorWood" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#242120"/>
+              <stop offset="45%" stop-color="#151313"/>
+              <stop offset="100%" stop-color="#0A0909"/>
+            </linearGradient>
+            <!-- Brass / Gold Plate & Handle Knob -->
+            <linearGradient id="brassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFF2CA"/>
+              <stop offset="25%" stop-color="#D8B153"/>
+              <stop offset="60%" stop-color="#936F1E"/>
+              <stop offset="85%" stop-color="#E6C46F"/>
+              <stop offset="100%" stop-color="#7B5610"/>
+            </linearGradient>
+            <!-- Tailored Black Blazer -->
+            <linearGradient id="blazerGrad" x1="20%" y1="0%" x2="80%" y2="100%">
+              <stop offset="0%" stop-color="#363231"/>
+              <stop offset="50%" stop-color="#1D1A19"/>
+              <stop offset="100%" stop-color="#110F0E"/>
+            </linearGradient>
+            <!-- Tan Leather Shoulder Tote -->
+            <linearGradient id="toteLeather" x1="0%" y1="0%" x2="100%" y2="80%">
+              <stop offset="0%" stop-color="#B77344"/>
+              <stop offset="50%" stop-color="#9E5D32"/>
+              <stop offset="100%" stop-color="#7B421F"/>
+            </linearGradient>
+            <!-- Silver Laptop -->
+            <linearGradient id="laptopAlum" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FFFFFF"/>
+              <stop offset="40%" stop-color="#E4E6EA"/>
+              <stop offset="100%" stop-color="#B8BAC0"/>
+            </linearGradient>
+            <!-- Hair Gradient -->
+            <linearGradient id="brunetteHair" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#34221A"/>
+              <stop offset="60%" stop-color="#211510"/>
+              <stop offset="100%" stop-color="#140B07"/>
+            </linearGradient>
+            <!-- Skin Tone -->
+            <linearGradient id="warmSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#E8B499"/>
+              <stop offset="70%" stop-color="#D89D7F"/>
+              <stop offset="100%" stop-color="#C28769"/>
+            </linearGradient>
+          </defs>
+
+          <!-- Background Building & Street Foliage -->
+          <rect width="740" height="460" fill="url(#wallGrad)"/>
+          <path d="M 0 240 Q 60 210 110 245 T 150 320 T 130 460 L 0 460 Z" fill="#6B7355" opacity="0.45"/>
+          <path d="M 10 260 Q 70 230 115 270 T 145 350 T 110 460 L 0 460 Z" fill="#586146" opacity="0.6"/>
+          <!-- Architecture Columns Left of Door -->
+          <rect x="110" y="0" width="70" height="460" fill="url(#colGrad)"/>
+          <rect x="180" y="0" width="130" height="460" fill="#E6DDD1"/>
+          <path d="M 180 0 L 186 460" stroke="#CFC3B4" stroke-width="4"/>
+
+          <!-- Dark Paneled Architectural Door on the Right -->
+          <rect x="420" y="0" width="320" height="460" fill="url(#doorWood)"/>
+          <rect x="412" y="0" width="12" height="460" fill="#0D0B0A"/>
+          <!-- Door Upper and Lower Inset Moldings -->
+          <rect x="445" y="24" width="270" height="185" rx="3" fill="#151312" stroke="#2D2826" stroke-width="3"/>
+          <rect x="455" y="34" width="250" height="165" rx="2" fill="#100E0D" stroke="#080707" stroke-width="2"/>
+          <rect x="445" y="235" width="270" height="215" rx="3" fill="#151312" stroke="#2D2826" stroke-width="3"/>
+          <rect x="455" y="245" width="250" height="195" rx="2" fill="#100E0D" stroke="#080707" stroke-width="2"/>
+
+          <!-- Heavy Ornate Gold Brass Door Handle & Knob Baseplate -->
+          <rect x="580" y="225" width="48" height="185" rx="10" fill="url(#brassGrad)" stroke="#6A4705" stroke-width="2"/>
+          <rect x="585" y="232" width="38" height="171" rx="7" fill="none" stroke="#FFF7DE" stroke-width="1.2" opacity="0.6"/>
+          <circle cx="604" cy="245" r="3" fill="#3D2904"/>
+          <circle cx="604" cy="390" r="3" fill="#3D2904"/>
+          <!-- Fluted Brass Doorknob -->
+          <g transform="translate(560, 310)">
+            <ellipse cx="26" cy="26" rx="24" ry="24" fill="url(#brassGrad)" stroke="#5A3F0B" stroke-width="2"/>
+            <ellipse cx="23" cy="23" rx="18" ry="18" fill="url(#brassGrad)"/>
+            <ellipse cx="18" cy="18" rx="8" ry="8" fill="#FFF8E0" opacity="0.8"/>
+            <path d="M 4 26 L 48 26 M 26 4 L 26 48 M 10 10 L 42 42 M 10 42 L 42 10" stroke="#75520F" stroke-width="1.5" opacity="0.4"/>
+          </g>
+
+          <!-- Handwritten Script "More than networking. ♡" on Door -->
+          <g transform="rotate(-6 550 140)">
+            <text x="460" y="115" font-family="'Caveat', cursive" font-size="44" font-weight="600" fill="#E4C1B6" letter-spacing="1">More</text>
+            <text x="475" y="152" font-family="'Caveat', cursive" font-size="42" font-weight="600" fill="#E4C1B6" letter-spacing="1">than</text>
+            <text x="475" y="196" font-family="'Caveat', cursive" font-size="45" font-weight="600" fill="#E4C1B6" letter-spacing="1">networking.</text>
+            <!-- Underline flourish with trailing heart -->
+            <path d="M 505 210 Q 555 192 600 180" stroke="#E4C1B6" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M 618 170 C 618 163 610 160 605 167 C 600 160 592 163 592 170 C 592 178 605 188 605 188 C 605 188 618 178 618 170 Z" fill="#E4C1B6" transform="rotate(18 605 174) scale(0.9)"/>
+          </g>
+
+          <!-- Lady: Tan Shoulder Bag (Behind Body & Arm) -->
+          <path d="M 160 250 C 150 290 155 380 180 460 L 260 460 C 275 420 280 340 270 275 Z" fill="url(#toteLeather)"/>
+          <!-- Tote Strap over shoulder -->
+          <path d="M 235 185 C 220 200 190 270 180 340" stroke="#874720" stroke-width="16" fill="none" stroke-linecap="round"/>
+          <path d="M 235 185 C 220 200 190 270 180 340" stroke="#BA7342" stroke-width="10" fill="none" stroke-linecap="round"/>
+
+          <!-- Lady: Neck and Profile Face turned right towards door -->
+          <path d="M 335 130 C 345 155 355 190 340 235 L 305 235 C 310 190 310 155 315 130 Z" fill="url(#warmSkin)"/>
+          <!-- Jaw, Ear, Face Profile -->
+          <path d="M 320 70 Q 360 70 380 90 Q 405 110 395 125 Q 380 138 350 148 Q 330 152 320 145 Z" fill="url(#warmSkin)"/>
+          <!-- Ear & Classic Gold Hoop Earring -->
+          <ellipse cx="346" cy="118" rx="8" ry="12" fill="#CF9274"/>
+          <ellipse cx="348" cy="132" rx="13" ry="18" fill="none" stroke="url(#brassGrad)" stroke-width="3.5"/>
+
+          <!-- Gold Double Layered Pendant Necklaces -->
+          <path d="M 320 165 Q 335 190 348 200 Q 355 180 345 160" fill="none" stroke="#D8AF4E" stroke-width="1.8"/>
+          <circle cx="348" cy="201" r="5" fill="url(#brassGrad)"/>
+          <path d="M 324 162 Q 335 178 343 184" fill="none" stroke="#D8AF4E" stroke-width="1.2"/>
+
+          <!-- Chic Messy Topknot Bun & Tendrils -->
+          <path d="M 270 90 C 265 40 310 5 350 12 C 385 18 410 45 405 90 C 400 125 385 140 375 145 C 360 130 355 100 340 90 C 315 80 290 85 270 90 Z" fill="url(#brunetteHair)"/>
+          <!-- Messy High Bun Crest -->
+          <ellipse cx="330" cy="28" rx="38" ry="28" fill="url(#brunetteHair)" transform="rotate(-12 330 28)"/>
+          <path d="M 300 20 Q 280 10 310 -2 Q 345 -5 365 15 Q 380 40 350 50 Z" fill="#2C1B14"/>
+          <!-- Wispy Tendrils framing face and nape -->
+          <path d="M 370 70 Q 410 90 400 130 Q 395 145 385 155" fill="none" stroke="#2C1B14" stroke-width="4.5" stroke-linecap="round"/>
+          <path d="M 380 100 Q 420 120 405 165" fill="none" stroke="#211510" stroke-width="3" stroke-linecap="round"/>
+          <path d="M 315 130 Q 305 160 300 180" fill="none" stroke="#211510" stroke-width="4"/>
+
+          <!-- Lady: Black Camisole / Top -->
+          <rect x="300" y="210" width="95" height="160" fill="#141212"/>
+
+          <!-- Tailored Black Blazer Silhouette (Shoulders, Lapels, Arms) -->
+          <path d="M 235 185 C 265 165 315 180 340 210 L 375 320 L 330 460 L 195 460 C 185 380 190 280 235 185 Z" fill="url(#blazerGrad)"/>
+          <!-- Right Lapel & Facing Door Shoulder -->
+          <path d="M 340 210 C 370 195 410 215 440 260 L 460 370 L 415 460 L 360 460 L 320 280 Z" fill="url(#blazerGrad)"/>
+          <!-- Blazer Lapels Sharp Cut -->
+          <path d="M 305 215 L 345 320 L 380 235 L 340 210 Z" fill="#2E2A29"/>
+          <path d="M 345 320 L 338 410 L 310 460" stroke="#0E0C0C" stroke-width="3"/>
+          <circle cx="343" cy="355" r="4.5" fill="#0A0909" stroke="#3D3735" stroke-width="1.5"/>
+
+          <!-- Foreground Left Arm holding Silver Modern Laptop -->
+          <g id="ladyArmAndLaptop">
+            <!-- Sleek Silver Laptop held diagonally -->
+            <polygon points="360,285 490,240 440,430 310,460" fill="url(#laptopAlum)" stroke="#8F949E" stroke-width="1.5"/>
+            <!-- Beveled display edge -->
+            <polygon points="360,285 488,242 482,248 360,290" fill="#FFFFFF"/>
+            <!-- Right Hand with Gold Ring & Bracelet cradling laptop -->
+            <path d="M 340 375 C 345 350 365 340 380 365 L 395 390 C 400 405 385 418 365 410 Z" fill="url(#warmSkin)"/>
+            <!-- Gold bangle/watch on wrist -->
+            <rect x="375" y="420" width="28" height="7" rx="3.5" transform="rotate(-30 375 420)" fill="url(#brassGrad)"/>
+            <!-- Delicately curved fingers over the laptop surface -->
+            <path d="M 368 375 Q 388 370 400 385 T 390 410 Q 375 410 365 395 Z" fill="#D59577"/>
+            <ellipse cx="383" cy="380" rx="3.5" ry="5" fill="none" stroke="url(#brassGrad)" stroke-width="1.8"/> <!-- Ring -->
+            <!-- Blazer Sleeve Forearm -->
+            <path d="M 235 220 C 265 260 300 340 370 420 L 325 450 C 275 390 230 310 205 250 Z" fill="url(#blazerGrad)"/>
+          </g>
+
+          <!-- Soft Left Vignette gradient feathering into the left text column -->
+          <rect x="0" y="0" width="120" height="460" fill="url(#leftFeatherFade)"/>
+          <defs>
+            <linearGradient id="leftFeatherFade" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#FAF7F2" stop-opacity="1"/>
+              <stop offset="60%" stop-color="#FAF7F2" stop-opacity="0.75"/>
+              <stop offset="100%" stop-color="#FAF7F2" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <!-- Dynamic loader that automatically switches to your local files bannerPic_3.jpg, bannerPic.jpg, or bannerPic_2.jpg -->
+        <img 
+          src="bannerPic_3.jpg" 
+          onerror="this.onerror=null; this.src='bannerPic.jpg'; this.onerror=function(){ this.src='bannerPic_2.jpg'; this.onerror=null; };" 
+          onload="this.style.display='block'; var fallback=this.previousElementSibling; if(fallback){ fallback.style.display='none'; }"
+          alt="Doorwise Brand Ambassador - More than networking" 
+          class="hero-banner-img" 
+          style="display:none; position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center right; z-index:10;"
+        />
       </div>
     </div>
   </section>
@@ -1259,7 +1504,7 @@
 
         <!-- Consultation Submission & Email Trigger Form -->
         <div class="booking-card" id="contact">
-          <div class="card-title-bar" style="background: var(--brand-navy);">
+          <div class="card-title-bar">
             <span>2. Confirm &amp; Notify Host</span>
             <i class="fa-regular fa-paper-plane"></i>
           </div>
@@ -1302,11 +1547,11 @@
             <div id="formStatus" class="form-status"></div>
           </form>
 
-          <!-- Contact details updated from business card -->
+          <!-- Contact details from business card -->
           <div class="contact-direct">
             <div class="direct-item">
               <i class="fa-solid fa-envelope"></i>
-              <a href="mailto:hello@doorwiseconnect.com/">hello@doorwiseconnect.com</a>
+              <a href="mailto:hello@doorwiseconnect.com">hello@doorwiseconnect.com</a>
             </div>
             <div class="direct-item">
               <i class="fa-solid fa-phone"></i>
@@ -1322,7 +1567,7 @@
     </div>
   </section>
 
-  <!-- Footer in Business Card Navy & Gold Accent -->
+  <!-- Footer in Softened Navy & Gold Accent -->
   <footer>
     <div class="container">
       <div class="footer-socials">
