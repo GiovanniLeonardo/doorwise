@@ -206,56 +206,48 @@
       max-width: 1920px;
       margin: 0 auto;
       line-height: 0;
+      /* Maintain complete image visibility without cropping */
+      display: block;
     }
 
     .hero-banner-image {
       width: 100%;
       height: auto;
-      min-height: 280px;
       display: block;
-      object-fit: cover;
-      object-position: center;
+      /* Remove fixed min-height and cover so natural full banner is always 100% visible */
+      object-fit: contain;
     }
 
-    /* Interactive hotspot overlay button precisely over "WORK WITH US ->" */
+    /* Percentage-anchored interactive hotspot overlaying "WORK WITH US ->" precisely across all viewport sizes */
     .hero-work-btn-link {
       position: absolute;
-      left: 7.2%;
-      bottom: 7.6%;
+      left: 6.8%;
+      bottom: 8.5%;
       width: 14.8%;
-      height: 10.5%;
-      min-width: 135px;
-      min-height: 38px;
-      max-width: 210px;
-      max-height: 52px;
+      height: 11.2%;
       border-radius: 9999px;
       z-index: 20;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      color: #FFFFFF;
-      font-family: var(--font-sans);
-      font-size: 11.5px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      background: rgba(186, 125, 110, 0.95);
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-      transition: all 0.25s ease;
+      color: transparent; /* Transparent so the original artwork text shows crisply beneath */
+      font-size: 0;
+      background: transparent;
+      border: none;
       cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
     }
 
     .hero-work-btn-link:hover {
-      background: rgba(166, 107, 93, 1);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+      background: rgba(255, 255, 255, 0.12);
+      transform: scale(1.02);
     }
 
     .hero-work-btn-link:focus-visible {
       outline: 2px solid var(--brand-navy);
-      outline-offset: 3px;
+      outline-offset: 2px;
+      background: rgba(255, 255, 255, 0.2);
     }
 
     /* ================= Section Header Commons ================= */
