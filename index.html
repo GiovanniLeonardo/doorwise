@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DoorWise | Opening The Right Doors For Business</title>
   
-  <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans, and Caveat for signature notes -->
+  <!-- Google Fonts: Cormorant Garamond, Plus Jakarta Sans, and Caveat for handwritten notes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -15,15 +15,22 @@
 
   <style>
     :root {
-      --bg-cream: #FBF9F5;
+      /* Card sampled navy blue & gold accents */
+      --brand-navy: #0F2537;
+      --brand-navy-dark: #091724;
+      --brand-navy-light: #16364E;
+      --brand-gold: #C9A86A;
+      --brand-gold-hover: #B89658;
+      
+      --bg-banner-top: #F9F6F0;
+      --bg-banner-mid: #F4EFE7;
+      --bg-banner-shadow: #EBE3D7;
+      --bg-cream: #FAF7F2;
       --bg-light: #F4EFEB;
       --card-bg: #FFFFFF;
-      --terracotta: #BA7364;
-      --terracotta-hover: #A66355;
-      --terracotta-soft: rgba(186, 115, 100, 0.12);
-      --text-dark: #1E1D1B;
-      --text-muted: #6B6864;
-      --border-color: #E8E2D9;
+      --text-dark: #1C1917;
+      --text-muted: #6E6862;
+      --border-color: #E6DFD5;
       --font-serif: 'Cormorant Garamond', Georgia, serif;
       --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-hand: 'Caveat', cursive;
@@ -68,8 +75,8 @@
 
     /* ================= Top Navigation ================= */
     header {
-      background-color: var(--bg-cream);
-      border-bottom: 1px solid var(--border-color);
+      background-color: var(--bg-banner-top);
+      border-bottom: 1px solid rgba(220, 212, 202, 0.7);
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -92,33 +99,21 @@
     .logo-main {
       display: flex;
       align-items: center;
-      gap: 2px;
+      gap: 1px;
     }
 
- .doorwise-logo-svg {
-  width: 36px;
-  height: 42px;
-  display: block;
-    }
-
-    .logo-arch::after {
-      content: '';
-      position: absolute;
-      right: 3px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 3px;
-      height: 3px;
-      background: #D4A373;
-      border-radius: 50%;
+    .doorwise-logo-svg {
+      width: 38px;
+      height: 48px;
+      display: block;
     }
 
     .logo-text {
       font-family: var(--font-serif);
-      font-size: 32px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: #211E1D;
+      font-size: 40px;
+      font-weight: 600;
+      letter-spacing: 2.2px;
+      color: #1A1817;
       line-height: 1;
       margin-left: 2px;
     }
@@ -126,10 +121,10 @@
     .logo-tagline {
       font-size: 8.5px;
       font-weight: 600;
-      letter-spacing: 2.2px;
-      color: #7A7571;
+      letter-spacing: 2.4px;
+      color: #726C65;
       text-transform: uppercase;
-      margin-top: 4px;
+      margin-top: 5px;
       padding-left: 1px;
     }
 
@@ -152,7 +147,7 @@
     }
 
     .nav-link:hover, .nav-link.active {
-      color: var(--terracotta);
+      color: var(--brand-navy);
     }
 
     .nav-link.active::after {
@@ -161,15 +156,15 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 1.5px;
-      background: var(--terracotta);
+      height: 2px;
+      background: var(--brand-navy);
     }
 
     .btn-connect {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background-color: var(--terracotta);
+      background-color: var(--brand-navy);
       color: #FFFFFF;
       font-size: 11px;
       font-weight: 600;
@@ -181,9 +176,9 @@
     }
 
     .btn-connect:hover {
-      background-color: var(--terracotta-hover);
+      background-color: var(--brand-navy-light);
       transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(186, 115, 100, 0.3);
+      box-shadow: 0 4px 14px rgba(15, 37, 55, 0.35);
     }
 
     .mobile-toggle {
@@ -195,10 +190,12 @@
       cursor: pointer;
     }
 
-    /* ================= Hero Section ================= */
+    /* ================= Hero Section with Original Shading ================= */
     .hero-section {
       position: relative;
-      background-color: #EFE9E2;
+      background: 
+        radial-gradient(ellipse 65% 80% at 20% 35%, rgba(255, 255, 255, 0.85) 0%, rgba(247, 243, 237, 0.6) 45%, rgba(235, 227, 215, 0.95) 100%),
+        linear-gradient(135deg, var(--bg-banner-top) 0%, var(--bg-banner-mid) 50%, var(--bg-banner-shadow) 100%);
       overflow: hidden;
       min-height: 520px;
     }
@@ -210,7 +207,6 @@
       min-height: 520px;
     }
 
-    /* High quality fallback backdrop matching your design's composition */
     .hero-bg-media {
       position: absolute;
       inset: 0;
@@ -224,8 +220,16 @@
     .hero-overlay-gradient {
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, #F9F6F0 0%, #F9F6F0 42%, rgba(249, 246, 240, 0.85) 54%, rgba(249, 246, 240, 0.2) 75%, transparent 100%);
+      background: linear-gradient(
+        90deg, 
+        #F7F3ED 0%, 
+        #F7F3ED 38%, 
+        rgba(247, 243, 237, 0.92) 50%, 
+        rgba(247, 243, 237, 0.35) 70%, 
+        transparent 100%
+      );
       z-index: 2;
+      pointer-events: none;
     }
 
     .hero-content {
@@ -238,19 +242,19 @@
     .hero-breadcrumbs {
       font-size: 10.5px;
       font-weight: 600;
-      letter-spacing: 2.2px;
+      letter-spacing: 2.6px;
       text-transform: uppercase;
-      color: #7D7772;
-      margin-bottom: 20px;
+      color: #77716A;
+      margin-bottom: 22px;
     }
 
     .hero-title {
       font-family: var(--font-serif);
-      font-size: 54px;
+      font-size: 56px;
       font-weight: 500;
       line-height: 1.08;
       letter-spacing: -0.5px;
-      color: #1A1817;
+      color: #1C1917;
       margin-bottom: 24px;
     }
 
@@ -266,24 +270,23 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      background-color: var(--terracotta);
+      background-color: var(--brand-navy);
       color: #FFFFFF;
       font-size: 11.5px;
       font-weight: 600;
       letter-spacing: 2px;
       text-transform: uppercase;
-      padding: 14px 28px;
-      border-radius: 30px;
+      padding: 13px 28px;
+      border-radius: 28px;
       transition: all 0.25s ease;
     }
 
     .btn-hero:hover {
-      background-color: var(--terracotta-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(186, 115, 100, 0.35);
+      background-color: var(--brand-navy-light);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(15, 37, 55, 0.35);
     }
 
-    /* Handwritten cursive script on right door */
     .hero-handwritten-note {
       position: absolute;
       right: 6%;
@@ -340,7 +343,7 @@
 
     .service-icon-box {
       font-size: 28px;
-      color: #BA7364;
+      color: var(--brand-navy);
       margin-bottom: 16px;
       display: inline-block;
     }
@@ -401,7 +404,7 @@
     }
 
     .split-tag span {
-      color: var(--terracotta);
+      color: var(--brand-navy);
     }
 
     .split-heading {
@@ -430,7 +433,7 @@
       font-family: var(--font-hand);
       font-size: 38px;
       line-height: 1.2;
-      color: #BA7364;
+      color: var(--brand-navy);
     }
 
     .handwritten-heart {
@@ -439,7 +442,7 @@
       margin-top: 10px;
     }
 
-    /* ================= Portfolio / Brand Ambassador Section ================= */
+    /* ================= Portfolio Section ================= */
     .portfolio-section {
       padding: 70px 0 60px;
       background-color: #FFFFFF;
@@ -508,7 +511,6 @@
       gap: 6px;
     }
 
-    /* Founder & LinkedIn Banner */
     .founder-banner {
       background-color: var(--bg-cream);
       border: 1px solid var(--border-color);
@@ -532,7 +534,7 @@
       height: 48px;
       border-radius: 50%;
       object-fit: cover;
-      border: 2px solid var(--terracotta);
+      border: 2px solid var(--brand-navy);
     }
 
     .founder-info h4 {
@@ -550,20 +552,20 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: #0077B5;
+      background: var(--brand-navy);
       color: #FFF;
       padding: 8px 16px;
       border-radius: 20px;
       font-size: 12px;
       font-weight: 600;
-      transition: opacity 0.2s;
+      transition: background 0.2s;
     }
 
     .founder-btn:hover {
-      opacity: 0.9;
+      background: var(--brand-navy-light);
     }
 
-    /* ================= Contact & Consultation Section ================= */
+    /* ================= Functional Calendar & Consultation ================= */
     .booking-section {
       padding: 70px 0;
       background-color: var(--bg-cream);
@@ -579,27 +581,26 @@
       background: #FFFFFF;
       border: 1px solid var(--border-color);
       border-radius: 10px;
-      padding: 32px;
+      padding: 30px;
       box-shadow: 0 4px 16px rgba(0,0,0,0.03);
     }
 
     .card-title-bar {
-      background: var(--terracotta);
+      background: var(--brand-navy);
       color: #FFFFFF;
-      padding: 10px 18px;
+      padding: 12px 18px;
       border-radius: 6px;
       font-size: 14px;
       font-weight: 600;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    /* Custom Calendar styling */
     .calendar-container {
       display: grid;
-      grid-template-columns: 1fr 140px;
+      grid-template-columns: 1fr 145px;
       gap: 20px;
     }
 
@@ -607,7 +608,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .calendar-header h5 {
@@ -628,6 +629,7 @@
       justify-content: center;
       font-size: 11px;
       color: #555;
+      transition: background 0.2s;
     }
 
     .calendar-nav-btn:hover {
@@ -653,25 +655,35 @@
       font-weight: 500;
       color: #333;
       cursor: pointer;
+      position: relative;
+      user-select: none;
     }
 
     .calendar-table td.active-day {
-      background: var(--terracotta);
-      color: #FFF;
+      background: var(--brand-navy) !important;
+      color: #FFF !important;
+      border-radius: 50%;
+      font-weight: 600;
+    }
+
+    .calendar-table td:hover:not(.active-day):not(.disabled-day) {
+      background: #E8EEF3;
       border-radius: 50%;
     }
 
-    .calendar-table td:hover:not(.active-day):not(.disabled) {
-      background: #F4EFEB;
-      border-radius: 50%;
+    .calendar-table td.disabled-day {
+      color: #CCC7BF;
+      cursor: not-allowed;
+      text-decoration: line-through;
     }
 
     .time-slot-picker {
       border-left: 1px solid var(--border-color);
-      padding-left: 18px;
+      padding-left: 16px;
       display: flex;
       flex-direction: column;
       gap: 8px;
+      min-height: 240px;
     }
 
     .time-slot-picker h6 {
@@ -682,27 +694,55 @@
       margin-bottom: 4px;
     }
 
+    .time-slot-list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
     .time-btn {
       background: #FBF9F5;
       border: 1px solid #DCD5CB;
-      padding: 7px 10px;
+      padding: 8px 10px;
       border-radius: 6px;
       font-size: 12px;
       color: #333;
       cursor: pointer;
       text-align: center;
       transition: all 0.2s;
+      width: 100%;
     }
 
     .time-btn.active, .time-btn:hover {
-      background: var(--terracotta);
-      border-color: var(--terracotta);
+      background: var(--brand-navy);
+      border-color: var(--brand-navy);
       color: #FFF;
     }
 
-    /* Contact form styling */
+    .no-slots-msg {
+      font-size: 12px;
+      color: #999;
+      font-style: italic;
+      padding-top: 10px;
+    }
+
+    /* Selected Confirmation Pill */
+    .selection-banner {
+      background: #EDF3F7;
+      border: 1px solid #C4D6E3;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 12.5px;
+      color: var(--brand-navy);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Contact & Submit Form */
     .form-group {
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .form-group label {
@@ -710,14 +750,14 @@
       font-size: 12px;
       font-weight: 600;
       color: #4C4844;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
 
     .form-control {
       width: 100%;
       border: 1px solid #D8CFC5;
       border-radius: 6px;
-      padding: 10px 14px;
+      padding: 10px 12px;
       font-family: inherit;
       font-size: 13.5px;
       background: #FAF8F5;
@@ -727,22 +767,22 @@
 
     .form-control:focus {
       outline: none;
-      border-color: var(--terracotta);
+      border-color: var(--brand-navy);
       background: #FFFFFF;
     }
 
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 14px;
+      gap: 12px;
     }
 
     .btn-submit {
       width: 100%;
-      background: var(--terracotta);
+      background: var(--brand-navy);
       color: #FFF;
       border: none;
-      padding: 13px;
+      padding: 14px;
       border-radius: 6px;
       font-size: 12px;
       font-weight: 600;
@@ -754,19 +794,43 @@
       justify-content: center;
       gap: 8px;
       transition: background 0.2s;
+      margin-top: 4px;
     }
 
     .btn-submit:hover {
-      background: var(--terracotta-hover);
+      background: var(--brand-navy-light);
+    }
+
+    .form-status {
+      display: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      margin-top: 14px;
+      text-align: center;
+    }
+
+    .form-status.success {
+      display: block;
+      background: #E8F5E9;
+      color: #2E7D32;
+      border: 1px solid #C8E6C9;
+    }
+
+    .form-status.error {
+      display: block;
+      background: #FFEBEE;
+      color: #C62828;
+      border: 1px solid #FFCDD2;
     }
 
     .contact-direct {
-      margin-top: 20px;
+      margin-top: 18px;
       padding-top: 16px;
       border-top: 1px solid #ECE7E0;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
     }
 
     .direct-item {
@@ -778,16 +842,17 @@
     }
 
     .direct-item i {
-      color: var(--terracotta);
+      color: var(--brand-navy);
       width: 16px;
     }
 
-    /* ================= Footer ================= */
+    /* ================= Footer in Deep Navy ================= */
     footer {
-      background: #B37162;
+      background: var(--brand-navy);
       color: #FFFFFF;
-      padding: 30px 0 24px;
+      padding: 34px 0 26px;
       text-align: center;
+      border-top: 3px solid var(--brand-gold);
     }
 
     .footer-socials {
@@ -800,7 +865,7 @@
     .footer-social-link {
       width: 38px;
       height: 38px;
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.12);
       border-radius: 50%;
       display: inline-flex;
       align-items: center;
@@ -811,15 +876,15 @@
     }
 
     .footer-social-link:hover {
-      background: #FFFFFF;
-      color: var(--terracotta);
+      background: var(--brand-gold);
+      color: var(--brand-navy);
       transform: translateY(-2px);
     }
 
     .footer-copy {
       font-size: 11.5px;
       letter-spacing: 0.8px;
-      opacity: 0.9;
+      opacity: 0.85;
     }
 
     /* ================= Responsive Breakpoints ================= */
@@ -898,11 +963,11 @@
         border-top: 1px solid var(--border-color);
         padding-left: 0;
         padding-top: 16px;
-        flex-direction: row;
-        flex-wrap: wrap;
       }
-      .time-btn {
-        flex: 1 1 30%;
+      .time-slot-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
       }
     }
   </style>
@@ -913,38 +978,35 @@
   <header>
     <div class="container nav-container">
       <a href="#home" class="brand-logo" aria-label="Doorwise Home">
-  <div class="logo-main">
-    <!-- Architectural D with open door inside -->
-    <svg class="doorwise-logo-svg" viewBox="0 0 54 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Outer arched frame representing the D curve -->
-      <path 
-        d="M 10 5 C 38 5 48 18 48 31 C 48 44 38 57 10 57" 
-        stroke="#231F20" 
-        stroke-width="5" 
-        stroke-linecap="round"
-      />
-      <!-- Left straight vertical jamb of the D -->
-      <line x1="10" y1="5" x2="10" y2="57" stroke="#231F20" stroke-width="5" stroke-linecap="round" />
-      
-      <!-- Inner open door swinging into the negative space with perspective shadow -->
-      <path 
-        d="M 12 12 L 23 18 L 23 48 L 12 51 Z" 
-        fill="#C99787" 
-        stroke="#BA7364" 
-        stroke-width="1.2"
-      />
-      <!-- Inner door panel shadow/depth line -->
-      <line x1="23" y1="18" x2="23" y2="48" stroke="#8C4D40" stroke-width="1.5" />
-      
-      <!-- Gold door knob on the open door leaf -->
-      <circle cx="20.5" cy="34" r="1.6" fill="#D4AF37" stroke="#9A7B1C" stroke-width="0.5" />
-    </svg>
+        <div class="logo-main">
+          <!-- Architectural 'D' with Open Door & Gold Knob -->
+          <svg class="doorwise-logo-svg" viewBox="0 0 76 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path 
+              d="M 12 12 Q 12 6 18 6 L 42 6 C 62 6 68 22 68 48 C 68 74 62 90 42 90 L 18 90 Q 12 90 12 84 Z" 
+              fill="#EFE9E0" 
+            />
+            <path 
+              d="M 14 12 L 32 20 L 32 78 L 14 84 Z" 
+              fill="#C9A86A" 
+            />
+            <path 
+              d="M 32 20 L 35 22 L 35 76 L 32 78 Z" 
+              fill="#A9884B" 
+            />
+            <circle cx="28" cy="50" r="2.4" fill="#0F2537" stroke="#091724" stroke-width="0.8" />
+            <path 
+              d="M 14 90 L 42 90 C 65 90 71 74 71 48 C 71 22 65 6 42 6 L 14 6 L 14 90 Z" 
+              stroke="#0F2537" 
+              stroke-width="5.5" 
+              stroke-linejoin="round" 
+            />
+            <line x1="14" y1="6" x2="14" y2="90" stroke="#0F2537" stroke-width="3" />
+          </svg>
 
-    <!-- Remainder of the wordmark -->
-    <span class="logo-text">OORWISE</span>
-  </div>
-  <span class="logo-tagline">OPENING THE RIGHT DOORS FOR BUSINESS.</span>
-</a>
+          <span class="logo-text">OORWISE</span>
+        </div>
+        <span class="logo-tagline">OPENING THE RIGHT DOORS FOR BUSINESS.</span>
+      </a>
 
       <nav>
         <ul class="nav-menu" id="navMenu">
@@ -966,10 +1028,8 @@
     </div>
   </header>
 
-  <!-- Hero Section with Design Image -->
+  <!-- Hero Section -->
   <section class="hero-section" id="home">
-    <!-- Place hero-banner.jpg in your GitHub Pages root directory. 
-         A high-resolution corporate woman fallback is loaded below by default. -->
     <img 
       src="hero-banner.jpg" 
       onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1920&q=80';" 
@@ -996,7 +1056,6 @@
         </a>
       </div>
 
-      <!-- Handwritten cursive overlay from design -->
       <div class="hero-handwritten-note">
         More than<br />
         networking. <span>♡</span>
@@ -1010,69 +1069,43 @@
       <h3 class="section-eyebrow">HOW WE HELP</h3>
 
       <div class="services-grid">
-        <!-- 1: Event Representation -->
         <div class="service-item">
-          <div class="service-icon-box">
-            <i class="fa-solid fa-users"></i>
-          </div>
+          <div class="service-icon-box"><i class="fa-solid fa-users"></i></div>
           <h4 class="service-title">Event Representation</h4>
-          <p class="service-desc">
-            We show up, make the introductions, and get you in the right rooms.
-          </p>
+          <p class="service-desc">We show up, make the introductions, and get you in the right rooms.</p>
         </div>
 
-        <!-- 2: Lead Generation -->
         <div class="service-item">
-          <div class="service-icon-box">
-            <i class="fa-regular fa-handshake"></i>
-          </div>
+          <div class="service-icon-box"><i class="fa-regular fa-handshake"></i></div>
           <h4 class="service-title">Lead Generation</h4>
-          <p class="service-desc">
-            We connect you with qualified prospects and new opportunities.
-          </p>
+          <p class="service-desc">We connect you with qualified prospects and new opportunities.</p>
         </div>
 
-        <!-- 3: Appointment Setting -->
         <div class="service-item">
-          <div class="service-icon-box">
-            <i class="fa-regular fa-calendar-check"></i>
-          </div>
+          <div class="service-icon-box"><i class="fa-regular fa-calendar-check"></i></div>
           <h4 class="service-title">Appointment Setting</h4>
-          <p class="service-desc">
-            We turn interest into real conversations and next steps.
-          </p>
+          <p class="service-desc">We turn interest into real conversations and next steps.</p>
         </div>
 
-        <!-- 4: Trade Show Support -->
         <div class="service-item">
-          <div class="service-icon-box">
-            <i class="fa-solid fa-bullhorn"></i>
-          </div>
+          <div class="service-icon-box"><i class="fa-solid fa-bullhorn"></i></div>
           <h4 class="service-title">Trade Show Support</h4>
-          <p class="service-desc">
-            Get more visibility, more engagement, and more valuable connections.
-          </p>
+          <p class="service-desc">Get more visibility, more engagement, and more valuable connections.</p>
         </div>
 
-        <!-- 5: Business Introductions -->
         <div class="service-item">
-          <div class="service-icon-box">
-            <i class="fa-solid fa-network-wired"></i>
-          </div>
+          <div class="service-icon-box"><i class="fa-solid fa-network-wired"></i></div>
           <h4 class="service-title">Business Introductions</h4>
-          <p class="service-desc">
-            We bring the right people together — because great things happen through connection.
-          </p>
+          <p class="service-desc">We bring the right people together — because great things happen through connection.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About / Signature Note Section -->
+  <!-- Split About Section -->
   <section class="split-about" id="about">
     <div class="container">
       <div class="split-grid">
-        <!-- Left photo with coffee & notebook -->
         <div class="split-photo-card">
           <img 
             src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=800&q=80" 
@@ -1080,12 +1113,9 @@
           />
         </div>
 
-        <!-- Middle copy -->
         <div class="split-center-content">
           <div class="split-tag">ABOUT <span>DOORWISE</span></div>
-          <h2 class="split-heading">
-            The right connections can change everything.
-          </h2>
+          <h2 class="split-heading">The right connections can change everything.</h2>
           <p class="split-body">
             Doorwise is a networking and lead generation company built to help businesses open new doors, build valuable relationships, and create long-term growth.
           </p>
@@ -1094,7 +1124,6 @@
           </a>
         </div>
 
-        <!-- Right cursive note -->
         <div class="split-quote-box">
           <div class="handwritten-quote">
             Opening<br />
@@ -1107,13 +1136,12 @@
     </div>
   </section>
 
-  <!-- Business Portfolio / Brand Ambassador Experience -->
+  <!-- Business Experience Portfolio -->
   <section class="portfolio-section" id="portfolio">
     <div class="container">
       <h3 class="section-eyebrow">OUR PORTFOLIO</h3>
 
       <div class="portfolio-grid">
-        <!-- Card 1 -->
         <div class="portfolio-card">
           <img 
             src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=700&q=80" 
@@ -1129,7 +1157,6 @@
           </div>
         </div>
 
-        <!-- Card 2 -->
         <div class="portfolio-card">
           <img 
             src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=700&q=80" 
@@ -1145,7 +1172,6 @@
           </div>
         </div>
 
-        <!-- Card 3 -->
         <div class="portfolio-card">
           <img 
             src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=700&q=80" 
@@ -1162,7 +1188,6 @@
         </div>
       </div>
 
-      <!-- Founder & LinkedIn Callout Badge -->
       <div class="founder-banner">
         <div class="founder-profile">
           <img 
@@ -1187,17 +1212,17 @@
     </div>
   </section>
 
-  <!-- Interactive Calendar & Contact Section -->
+  <!-- Interactive Calendar & Auto-Email Dispatch -->
   <section class="booking-section" id="consultation">
     <div class="container">
       <h3 class="section-eyebrow">CONTACT &amp; CONSULTATION</h3>
 
       <div class="booking-grid">
-        <!-- Calendar Scheduler -->
+        <!-- Live Calendar with Availability Slots -->
         <div class="booking-card">
           <div class="card-title-bar">
-            <span>Schedule a Consultation</span>
-            <i class="fa-regular fa-clock"></i>
+            <span>1. Select Date &amp; Availability</span>
+            <i class="fa-regular fa-calendar-check"></i>
           </div>
 
           <div class="calendar-container">
@@ -1205,8 +1230,8 @@
               <div class="calendar-header">
                 <h5 id="calendarMonthTitle">November 2026</h5>
                 <div style="display: flex; gap: 6px;">
-                  <button class="calendar-nav-btn" onclick="prevMonth()"><i class="fa-solid fa-chevron-left"></i></button>
-                  <button class="calendar-nav-btn" onclick="nextMonth()"><i class="fa-solid fa-chevron-right"></i></button>
+                  <button type="button" class="calendar-nav-btn" onclick="prevMonth()"><i class="fa-solid fa-chevron-left"></i></button>
+                  <button type="button" class="calendar-nav-btn" onclick="nextMonth()"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
               </div>
 
@@ -1217,71 +1242,79 @@
                   </tr>
                 </thead>
                 <tbody id="calendarDaysBody">
-                  <!-- Generated by JS -->
+                  <!-- Dynamically populated -->
                 </tbody>
               </table>
             </div>
 
-            <!-- Time Slots -->
+            <!-- Dynamic Availability Time Slots -->
             <div class="time-slot-picker">
-              <h6>Time (EST)</h6>
-              <button class="time-btn" onclick="selectTime(this)">10:00 AM</button>
-              <button class="time-btn" onclick="selectTime(this)">11:30 AM</button>
-              <button class="time-btn active" onclick="selectTime(this)">2:00 PM</button>
-              <button class="time-btn" onclick="selectTime(this)">3:30 PM</button>
-              <button class="time-btn" onclick="selectTime(this)">5:00 PM</button>
-              <button class="time-btn" onclick="selectTime(this)">7:00 PM</button>
+              <h6>Available (EST)</h6>
+              <div class="time-slot-list" id="timeSlotsContainer">
+                <!-- Dynamically populated based on chosen date -->
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Get In Touch Form -->
+        <!-- Consultation Submission & Email Trigger Form -->
         <div class="booking-card" id="contact">
-          <div class="card-title-bar" style="background:#5B534E;">
-            <span>Get In Touch</span>
+          <div class="card-title-bar" style="background: var(--brand-navy);">
+            <span>2. Confirm &amp; Notify Host</span>
             <i class="fa-regular fa-paper-plane"></i>
           </div>
 
-          <form id="contactForm" onsubmit="handleFormSubmit(event)">
+          <div class="selection-banner">
+            <i class="fa-regular fa-calendar"></i>
+            <span id="selectedSummaryDisplay">Selecting Date &amp; Time...</span>
+          </div>
+
+          <form id="consultationForm" onsubmit="handleConsultationSubmit(event)">
+            <input type="hidden" name="Selected_Date" id="hiddenDate" value="" />
+            <input type="hidden" name="Selected_Time" id="hiddenTime" value="" />
+            <input type="hidden" name="_subject" value="New DoorWise Consultation Booked!" />
+
             <div class="form-row">
               <div class="form-group">
-                <label>Name</label>
-                <input type="text" class="form-control" required placeholder="Your full name" />
+                <label>Your Name *</label>
+                <input type="text" name="Client_Name" class="form-control" required placeholder="John Doe" />
               </div>
               <div class="form-group">
-                <label>Phone</label>
-                <input type="tel" class="form-control" placeholder="(305) 336-5380" />
+                <label>Phone Number *</label>
+                <input type="tel" name="Client_Phone" class="form-control" required placeholder="(732) 379-8149" />
               </div>
             </div>
 
             <div class="form-group">
-              <label>Email Address</label>
-              <input type="email" class="form-control" required placeholder="youremail@abc.com" />
+              <label>Email Address *</label>
+              <input type="email" name="Client_Email" class="form-control" required placeholder="john@company.com" />
             </div>
 
             <div class="form-group">
-              <label>Message / Goals</label>
-              <textarea class="form-control" rows="3" placeholder="Tell us about your brand representation or lead gen goals..."></textarea>
+              <label>Discussion Topics / Goals</label>
+              <textarea name="Client_Message" class="form-control" rows="3" placeholder="Tell us about your brand ambassador or event networking goals..."></textarea>
             </div>
 
-            <button type="submit" class="btn-submit">
-              CONFIRM CONSULTATION &nbsp;<i class="fa-solid fa-arrow-right"></i>
+            <button type="submit" class="btn-submit" id="submitBtn">
+              CONFIRM &amp; NOTIFY HOST &nbsp;<i class="fa-solid fa-arrow-right"></i>
             </button>
+
+            <div id="formStatus" class="form-status"></div>
           </form>
 
-          <!-- Direct info -->
+          <!-- Contact details updated from business card -->
           <div class="contact-direct">
             <div class="direct-item">
               <i class="fa-solid fa-envelope"></i>
-              <a href="mailto:hello@doorwiseconnect.com">kerem@doorwiseconnect.com</a>
+              <a href="mailto:hello@doorwiseconnect.com/">hello@doorwiseconnect.com</a>
             </div>
             <div class="direct-item">
               <i class="fa-solid fa-phone"></i>
-              <a href="tel:+13053365380">(305) 336-5380</a>
+              <a href="tel:+17323798149">(732) 379-8149</a>
             </div>
             <div class="direct-item">
               <i class="fa-brands fa-linkedin"></i>
-              <a href="https://www.linkedin.com/in/kerem-kemi-suero-perez-3b4a093a/" target="_blank">kerem-kemi-suero-perez</a>
+              <a href="https://www.linkedin.com/in/kemi-suero-perez-3b4a093a/" target="_blank">kerem-kemi-suero-perez</a>
             </div>
           </div>
         </div>
@@ -1289,54 +1322,66 @@
     </div>
   </section>
 
-  <!-- Footer with Social Icons -->
+  <!-- Footer in Business Card Navy & Gold Accent -->
   <footer>
     <div class="container">
       <div class="footer-socials">
-        <a href="https://www.linkedin.com/in/kerem-kemi-suero-perez-3b4a093a/" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn">
+        <a href="https://www.linkedin.com/in/kemi-suero-perez-3b4a093a/" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="LinkedIn">
           <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/kerem-kemi-suero-perez-3b4a093a/" target="_blank" rel="noopener noreferrer" class="footer-social-link" title="Kerem LinkedIn">
+          <i class="fa-solid fa-user-tie"></i>
         </a>
         <a href="#" class="footer-social-link" title="Instagram">
           <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="#" class="footer-social-link" title="X / Twitter">
-          <i class="fa-brands fa-x-twitter"></i>
         </a>
         <a href="mailto:hello@doorwiseconnect.com" class="footer-social-link" title="Email">
           <i class="fa-regular fa-envelope"></i>
         </a>
       </div>
       <p class="footer-copy">
-        &copy; 2026 DoorWise. Opening New Doors for Business. All rights reserved.
+        &copy; 2026 DoorWise Networking Services. Opening the right doors for business. All rights reserved.
       </p>
     </div>
   </footer>
 
-  <!-- Simple Vanilla JS for Mobile Nav & Interactive Calendar -->
+  <!-- Functional Calendar and Form Dispatch Engine -->
   <script>
-    // Mobile navigation toggle
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
     menuToggle.addEventListener('click', () => {
       navMenu.classList.toggle('mobile-open');
     });
 
-    // Close mobile nav on link click
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         navMenu.classList.remove('mobile-open');
       });
     });
 
-    // Interactive Calendar Logic
-    let currentYear = 2026;
-    let currentMonth = 10; // 0-indexed: 10 is November
-    let selectedDay = 17;
+    const today = new Date();
+    let currentYear = today.getFullYear();
+    let currentMonth = today.getMonth();
+    let selectedDate = new Date();
+    selectedDate.setDate(selectedDate.getDate() + 1);
+    let selectedTimeSlot = "10:00 AM";
 
     const monthNames = [
       "January", "February", "March", "April", "May", "June",
       "July", "August", "September", "October", "November", "December"
     ];
+
+    function getAvailableSlotsForDay(dayOfWeek) {
+      if (dayOfWeek === 0) {
+        return [];
+      } else if (dayOfWeek === 6) {
+        return ["10:00 AM", "11:30 AM", "1:00 PM"];
+      } else if (dayOfWeek === 5) {
+        return ["9:30 AM", "11:00 AM", "1:30 PM", "3:00 PM"];
+      } else {
+        return ["9:00 AM", "10:30 AM", "1:00 PM", "2:30 PM", "4:00 PM", "5:30 PM"];
+      }
+    }
 
     function renderCalendar() {
       const monthTitle = document.getElementById('calendarMonthTitle');
@@ -1345,35 +1390,105 @@
 
       daysBody.innerHTML = '';
 
-      const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+      const firstDayIndex = new Date(currentYear, currentMonth, 1).getDay();
       const totalDays = new Date(currentYear, currentMonth + 1, 0).getDate();
 
-      let date = 1;
+      let dayNum = 1;
+      const cleanToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+
       for (let i = 0; i < 6; i++) {
         const row = document.createElement('tr');
         for (let j = 0; j < 7; j++) {
           const cell = document.createElement('td');
-          if (i === 0 && j < firstDay) {
+          if (i === 0 && j < firstDayIndex) {
             cell.textContent = '';
-          } else if (date > totalDays) {
+          } else if (dayNum > totalDays) {
             cell.textContent = '';
           } else {
-            cell.textContent = date;
-            const currentCellDate = date;
-            if (currentCellDate === selectedDay) {
-              cell.classList.add('active-day');
+            const thisCellDate = new Date(currentYear, currentMonth, dayNum);
+            cell.textContent = dayNum;
+
+            if (thisCellDate < cleanToday || j === 0) {
+              cell.classList.add('disabled-day');
+              if (j === 0) cell.title = "Closed on Sundays";
+              if (thisCellDate < cleanToday) cell.title = "Past date";
+            } else {
+              if (
+                selectedDate &&
+                thisCellDate.getFullYear() === selectedDate.getFullYear() &&
+                thisCellDate.getMonth() === selectedDate.getMonth() &&
+                thisCellDate.getDate() === selectedDate.getDate()
+              ) {
+                cell.classList.add('active-day');
+              }
+
+              const capturedDate = new Date(thisCellDate);
+              cell.addEventListener('click', () => {
+                selectedDate = capturedDate;
+                renderCalendar();
+                renderAvailableSlots();
+                updateFormPayload();
+              });
             }
-            cell.addEventListener('click', () => {
-              selectedDay = currentCellDate;
-              renderCalendar();
-            });
-            date++;
+            dayNum++;
           }
           row.appendChild(cell);
         }
         daysBody.appendChild(row);
-        if (date > totalDays) break;
+        if (dayNum > totalDays) break;
       }
+    }
+
+    function renderAvailableSlots() {
+      const container = document.getElementById('timeSlotsContainer');
+      container.innerHTML = '';
+
+      const dayOfWeek = selectedDate.getDay();
+      const slots = getAvailableSlotsForDay(dayOfWeek);
+
+      if (slots.length === 0) {
+        container.innerHTML = '<span class="no-slots-msg">No availability on this day. Please pick a weekday or Saturday.</span>';
+        selectedTimeSlot = "";
+        updateFormPayload();
+        return;
+      }
+
+      if (!slots.includes(selectedTimeSlot)) {
+        selectedTimeSlot = slots[0];
+      }
+
+      slots.forEach(slot => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = `time-btn ${slot === selectedTimeSlot ? 'active' : ''}`;
+        btn.textContent = slot;
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.time-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedTimeSlot = slot;
+          updateFormPayload();
+        });
+        container.appendChild(btn);
+      });
+
+      updateFormPayload();
+    }
+
+    function updateFormPayload() {
+      const formattedDate = selectedDate.toLocaleDateString('en-US', {
+        weekday: 'short',
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric'
+      });
+
+      const summaryText = selectedTimeSlot 
+        ? `${formattedDate} at ${selectedTimeSlot} (EST)`
+        : `${formattedDate} (No timeslot selected)`;
+
+      document.getElementById('selectedSummaryDisplay').textContent = summaryText;
+      document.getElementById('hiddenDate').value = formattedDate;
+      document.getElementById('hiddenTime').value = selectedTimeSlot;
     }
 
     function prevMonth() {
@@ -1394,19 +1509,70 @@
       renderCalendar();
     }
 
-    function selectTime(element) {
-      document.querySelectorAll('.time-btn').forEach(btn => btn.classList.remove('active'));
-      element.classList.add('active');
-    }
-
-    function handleFormSubmit(e) {
+    async function handleConsultationSubmit(e) {
       e.preventDefault();
-      alert(`Thank you! Your consultation request has been recorded for ${monthNames[currentMonth]} ${selectedDay}, ${currentYear}. Kerem will reach out shortly.`);
-      e.target.reset();
+
+      if (!selectedTimeSlot) {
+        alert("Please pick an available time slot before confirming.");
+        return;
+      }
+
+      const form = e.target;
+      const submitBtn = document.getElementById('submitBtn');
+      const formStatus = document.getElementById('formStatus');
+      const formData = new FormData(form);
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> &nbsp; SENDING NOTIFICATION...';
+
+      const formspreeEndpoint = 'https://formspree.io/f/xvgpkvyy';
+
+      try {
+        const response = await fetch(formspreeEndpoint, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          formStatus.className = 'form-status success';
+          formStatus.innerHTML = `
+            <strong><i class="fa-solid fa-circle-check"></i> Consultation Confirmed!</strong><br />
+            An email notification has been dispatched to Kemi (${formData.get('Selected_Date')} @ ${formData.get('Selected_Time')}). We will contact you shortly!
+          `;
+          form.reset();
+          updateFormPayload();
+        } else {
+          throw new Error('Formspree dispatch error');
+        }
+      } catch (err) {
+        formStatus.className = 'form-status success';
+        formStatus.innerHTML = `
+          <strong><i class="fa-solid fa-circle-check"></i> Request Prepared!</strong><br />
+          Opening your email client to send confirmation directly to hello@doorwiseconnect.com...
+        `;
+
+        const mailSubject = encodeURIComponent(`Consultation Booking: ${formData.get('Client_Name')} - ${formData.get('Selected_Date')}`);
+        const mailBody = encodeURIComponent(
+          `Hi Kemi,\n\nA new consultation was booked via DoorWise:\n\n` +
+          `Client Name: ${formData.get('Client_Name')}\n` +
+          `Phone: ${formData.get('Client_Phone')}\n` +
+          `Email: ${formData.get('Client_Email')}\n` +
+          `Scheduled Slot: ${formData.get('Selected_Date')} at ${formData.get('Selected_Time')} (EST)\n\n` +
+          `Message / Goals:\n${formData.get('Client_Message') || 'None provided'}`
+        );
+
+        window.location.href = `mailto:hello@doorwiseconnect.com?subject=${mailSubject}&body=${mailBody}`;
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'CONFIRM &amp; NOTIFY HOST &nbsp;<i class="fa-solid fa-arrow-right"></i>';
+      }
     }
 
-    // Initialize calendar
     renderCalendar();
+    renderAvailableSlots();
   </script>
 </body>
 </html>
